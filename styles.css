@@ -16,6 +16,7 @@ clear button disabled: #D0CDCD
   padding: 0;
   margin: 0;
   border: 0;
+  font-family: 'Open Sans', sans-sans-serif;
 }
 
 :root {
