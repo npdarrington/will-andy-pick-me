@@ -1,3 +1,8 @@
+var userInput = document.querySelector('.input-question');
+var answerBtn = document.querySelector('.btn-answer');
+var eightBallImg = document.querySelector('.eight-ball');
+var returnQuestion = document.querySelector('.question-return'):
+var returnAnswer = document.querySelector('.answer-return');
 var answers = [
     'It is certain',
     'It is decidedly so',
