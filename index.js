@@ -5,6 +5,7 @@ var returnQuestion = document.querySelector('.question-return');
 var returnAnswer = document.querySelector('.answer-return');
 var askQuestionSection = document.querySelector('.ask-question');
 var clearBtn = document.querySelector('.btn-clear');
+var favoriteBtn = document.querySelector('.btn-favorite');
 var answers = [
     'It is certain',
     'It is decidedly so',
@@ -30,7 +31,7 @@ var answers = [
 
 window.onload = function() {
   enableDisableQuestionBtn();
-  enabledDisableClearBtn();
+  enabledDisableClearFunctionBtns();
 }
 askQuestionSection.addEventListener('click', clickHandler);
 askQuestionSection.addEventListener('keyup', keyupHandler);
@@ -58,14 +59,14 @@ function displayAnswer() {
   returnQuestion.innerText = `"${question}?"`;
   returnAnswer.innerText = answers[getRandomIndex(answers)];
   enableDisableQuestionBtn();
-  enabledDisableClearBtn();
+  enabledDisableClearFunctionBtns();
 }
 
 function clearDisplayedAnswer() {
   eightBallImg.classList.remove('hidden');
   returnQuestion.innerText = '';
   returnAnswer.innerText = '';
-  enabledDisableClearBtn();
+  enabledDisableClearFunctionBtns();
 }
 
 function enableDisableQuestionBtn() {
@@ -76,10 +77,12 @@ function enableDisableQuestionBtn() {
   }
 }
 
-function enabledDisableClearBtn() {
+function enabledDisableClearFunctionBtns() {
   if (eightBallImg.classList.contains('hidden')) {
+    favoriteBtn.disabled = false;
     clearBtn.disabled = false;
   } else {
+    favoriteBtn.disabled = true;
     clearBtn.disabled = true;
   }
 }
