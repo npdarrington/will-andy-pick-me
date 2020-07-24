@@ -31,12 +31,16 @@ askQuestionSection.addEventListener('click', clickHandler);
 
 function clickHandler(event) {
   if (event.target.classList.contains('btn-answer')) {
-    var question = userInput.value;
-    userInput.value = '';
-    eightBallImg.classList.add('hidden');
-    returnQuestion.innerText = `${question}?`;
-    returnAnswer.innerText = answers[getRandomIndex(answers)];
+    displayAnswer();
   }
+}
+
+function displayAnswer() {
+  var question = userInput.value;
+  userInput.value = '';
+  eightBallImg.classList.add('hidden');
+  returnQuestion.innerText = `${question}?`;
+  returnAnswer.innerText = answers[getRandomIndex(answers)];
 }
 
 function getRandomIndex(array) {
