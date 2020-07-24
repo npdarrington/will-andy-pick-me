@@ -4,6 +4,7 @@ var eightBallImg = document.querySelector('.eight-ball');
 var returnQuestion = document.querySelector('.question-return');
 var returnAnswer = document.querySelector('.answer-return');
 var askQuestionSection = document.querySelector('.ask-question');
+var clearBtn = document.querySelector('.btn-clear');
 var answers = [
     'It is certain',
     'It is decidedly so',
@@ -28,10 +29,21 @@ var answers = [
 ];
 
 askQuestionSection.addEventListener('click', clickHandler);
+askQuestionSection.addEventListener('keyup', keyupHandler);
 
 function clickHandler(event) {
   if (event.target.classList.contains('btn-answer')) {
     displayAnswer();
+  }
+
+  if (event.target.classList.contains('btn-clear')) {
+    clearDisplayedAnswer();
+  }
+}
+
+function keyupHandler(event) {
+  if (event.target.classList.contains('user-input')) {
+    enableDisableClearBtn();
   }
 }
 
