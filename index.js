@@ -28,6 +28,7 @@ var answers = [
     'Very doubtful'
 ];
 
+window.onload = enableDisableQuestionBtn();
 askQuestionSection.addEventListener('click', clickHandler);
 askQuestionSection.addEventListener('keyup', keyupHandler);
 
@@ -42,8 +43,8 @@ function clickHandler(event) {
 }
 
 function keyupHandler(event) {
-  if (event.target.classList.contains('user-input')) {
-    enableDisableClearBtn();
+  if (event.target.classList.contains('input-question')) {
+    enableDisableQuestionBtn();
   }
 }
 
@@ -53,6 +54,15 @@ function displayAnswer() {
   eightBallImg.classList.add('hidden');
   returnQuestion.innerText = `${question}?`;
   returnAnswer.innerText = answers[getRandomIndex(answers)];
+  enableDisableQuestionBtn();
+}
+
+function enableDisableQuestionBtn() {
+  if (userInput.value !== '') {
+    answerBtn.disabled = false;
+  } else {
+    answerBtn.disabled = true;
+  }
 }
 
 function getRandomIndex(array) {
