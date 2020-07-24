@@ -13,13 +13,67 @@ clear button disabled: #D0CDCD
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
   --title-text: #2B4E80;
-  --btn-disabled: #607AA0;
-  --btn-hover: #1C3455;
+  --btn-answer-color: #2B4E80;
+  --input-text-color: #2B4E80;
+  --btn-answer-disabled: #607AA0;
+  --btn-answer-hover: #1C3455;
   --blue-background: #E6ECF4;
   --btn-clear: #DE4841;
   --btn-clear-disabled: #D0CDCD;
+}
+
+main {
+  width: 60vw;
+  height: 50vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.title {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  font-family: 'Life Savers', serif;
+  grid-row-gap: 1.8rem;
+  color: var(--title-text);
+  font-size: 1.5rem;
+}
+
+.ask-question {
+  background-color: var(--blue-background);
+  padding: 10px;
+}
+
+.ask-question input, .ask-question .btn-answer {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+}
+
+.ask-question input {
+  color: var(--input-text-color);
+}
+
+.ask-question .btn-answer {
+  background-color: var(--btn-answer-color);
+  color: #fff;
+  margin-top: 5px;
+}
+
+.btn-answer:hover {
+  background-color: var(--btn-answer-hover);
+  cursor: pointer;
+}
+
+.btn-answer:disabled {
+  background-color: var(--btn-answer-disabled);
 }
