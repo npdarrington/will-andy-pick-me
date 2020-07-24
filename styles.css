@@ -51,6 +51,8 @@ main {
 .ask-question {
   background-color: var(--blue-background);
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ask-question input, .ask-question .btn-answer {
@@ -76,4 +78,34 @@ main {
 
 .btn-answer:disabled {
   background-color: var(--btn-answer-disabled);
+}
+
+.eight-ball {
+  width: 15rem;
+  height: auto;
+  align-self: center;
+  margin: 20px 0;
+}
+
+.btn-clear {
+  background-color: var(--btn-clear);
+  color: white;
+  width: 4rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.btn-clear:disabled {
+  background-color: var(--btn-clear-disabled);
+}
+
+.woody {
+  display: flex;
+  padding: 0 10px;
+}
+
+.woody img {
+  width: 18rem;
+  height: auto;
+  margin-left: 50px;
 }
