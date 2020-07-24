@@ -127,6 +127,11 @@ main {
   margin-right: 10px;
 }
 
+.btn-favorite:disabled {
+  background-color: var(--btn-answer-disabled);
+  cursor: auto;
+}
+
 .woody {
   display: flex;
   padding: 0 10px;
