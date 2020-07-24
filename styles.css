@@ -143,6 +143,16 @@ main {
   margin-left: 75px;
 }
 
+.favorites {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.favorites h1 {
+  font-family: 'Life Savers', serif;
+  color: var(--title-text); 
+}
+
 .hidden {
   display: none!important;
 }
