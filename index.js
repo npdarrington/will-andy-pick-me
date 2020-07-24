@@ -28,7 +28,10 @@ var answers = [
     'Very doubtful'
 ];
 
-window.onload = enableDisableQuestionBtn();
+window.onload = function() {
+  enableDisableQuestionBtn();
+  enabledDisableClearBtn();
+}
 askQuestionSection.addEventListener('click', clickHandler);
 askQuestionSection.addEventListener('keyup', keyupHandler);
 
@@ -55,6 +58,14 @@ function displayAnswer() {
   returnQuestion.innerText = `${question}?`;
   returnAnswer.innerText = answers[getRandomIndex(answers)];
   enableDisableQuestionBtn();
+  enabledDisableClearBtn();
+}
+
+function clearDisplayedAnswer() {
+  eightBallImg.classList.remove('hidden');
+  returnQuestion.innerText = '';
+  returnAnswer.innerText = '';
+  enabledDisableClearBtn();
 }
 
 function enableDisableQuestionBtn() {
@@ -62,6 +73,14 @@ function enableDisableQuestionBtn() {
     answerBtn.disabled = false;
   } else {
     answerBtn.disabled = true;
+  }
+}
+
+function enabledDisableClearBtn() {
+  if (eightBallImg.classList.contains('hidden')) {
+    clearBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
   }
 }
 
