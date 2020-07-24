@@ -89,6 +89,14 @@ main {
   margin: 20px 0;
 }
 
+.question-return, .answer-return {
+  align-self: center;
+}
+
+.question-return {
+  font-style: italic;
+}
+
 .btn-clear {
   background-color: var(--btn-clear);
   color: white;
