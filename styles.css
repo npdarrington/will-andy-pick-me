@@ -16,7 +16,6 @@ clear button disabled: #D0CDCD
   padding: 0;
   margin: 0;
   border: 0;
-  font-family: 'Open Sans', sans-sans-serif;
 }
 
 :root {
@@ -37,6 +36,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .title {
@@ -56,6 +56,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 250px;
 }
 
 .ask-question input, .ask-question .btn-answer {
@@ -81,10 +82,11 @@ main {
 
 .btn-answer:disabled {
   background-color: var(--btn-answer-disabled);
+  cursor: auto;
 }
 
 .eight-ball {
-  width: 15rem;
+  width: 10rem;
   height: auto;
   align-self: center;
   margin: 20px 0;
@@ -96,13 +98,7 @@ main {
 
 .question-return {
   margin-bottom: 10px;
-}
-
-.question-return, .answer-return {
-  align-self: center;
-}
-
-.question-return {
+  font-size: 1.5rem;
   font-style: italic;
 }
 
@@ -112,10 +108,12 @@ main {
   width: 4rem;
   height: 2rem;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .btn-clear:disabled {
   background-color: var(--btn-clear-disabled);
+  cursor: auto;
 }
 
 .woody {
@@ -126,7 +124,7 @@ main {
 .woody img {
   width: 18rem;
   height: auto;
-  margin-left: 50px;
+  margin-left: 75px;
 }
 
 .hidden {

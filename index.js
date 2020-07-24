@@ -4,6 +4,7 @@ var eightBallImg = document.querySelector('.eight-ball');
 var returnQuestion = document.querySelector('.question-return');
 var returnAnswer = document.querySelector('.answer-return');
 var askQuestionSection = document.querySelector('.ask-question');
+var clearBtn = document.querySelector('.btn-clear');
 var answers = [
     'It is certain',
     'It is decidedly so',
@@ -27,11 +28,26 @@ var answers = [
     'Very doubtful'
 ];
 
+window.onload = function() {
+  enableDisableQuestionBtn();
+  enabledDisableClearBtn();
+}
 askQuestionSection.addEventListener('click', clickHandler);
+askQuestionSection.addEventListener('keyup', keyupHandler);
 
 function clickHandler(event) {
   if (event.target.classList.contains('btn-answer')) {
     displayAnswer();
+  }
+
+  if (event.target.classList.contains('btn-clear')) {
+    clearDisplayedAnswer();
+  }
+}
+
+function keyupHandler(event) {
+  if (event.target.classList.contains('input-question')) {
+    enableDisableQuestionBtn();
   }
 }
 
@@ -39,8 +55,33 @@ function displayAnswer() {
   var question = userInput.value;
   userInput.value = '';
   eightBallImg.classList.add('hidden');
-  returnQuestion.innerText = `${question}?`;
+  returnQuestion.innerText = `"${question}?"`;
   returnAnswer.innerText = answers[getRandomIndex(answers)];
+  enableDisableQuestionBtn();
+  enabledDisableClearBtn();
+}
+
+function clearDisplayedAnswer() {
+  eightBallImg.classList.remove('hidden');
+  returnQuestion.innerText = '';
+  returnAnswer.innerText = '';
+  enabledDisableClearBtn();
+}
+
+function enableDisableQuestionBtn() {
+  if (userInput.value !== '') {
+    answerBtn.disabled = false;
+  } else {
+    answerBtn.disabled = true;
+  }
+}
+
+function enabledDisableClearBtn() {
+  if (eightBallImg.classList.contains('hidden')) {
+    clearBtn.disabled = false;
+  } else {
+    clearBtn.disabled = true;
+  }
 }
 
 function getRandomIndex(array) {
