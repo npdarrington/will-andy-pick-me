@@ -55,16 +55,17 @@ main {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .ask-question input, .ask-question .btn-answer {
   width: 100%;
   height: 2rem;
-  text-align: center;
 }
 
 .ask-question input {
   color: var(--input-text-color);
+  text-align: center;
 }
 
 .ask-question .btn-answer {
@@ -89,6 +90,22 @@ main {
   margin: 20px 0;
 }
 
+.display-answers {
+  text-align: center;
+}
+
+.question-return {
+  margin-bottom: 10px;
+}
+
+.question-return, .answer-return {
+  align-self: center;
+}
+
+.question-return {
+  font-style: italic;
+}
+
 .btn-clear {
   background-color: var(--btn-clear);
   color: white;
@@ -110,4 +127,8 @@ main {
   width: 18rem;
   height: auto;
   margin-left: 50px;
+}
+
+.hidden {
+  display: none!important;
 }
