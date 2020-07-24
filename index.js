@@ -44,6 +44,10 @@ function clickHandler(event) {
   if (event.target.classList.contains('btn-clear')) {
     clearDisplayedAnswer();
   }
+
+  if (event.target.classList.contains('btn-favorite')) {
+    displayFavorite();
+  }
 }
 
 function keyupHandler(event) {
