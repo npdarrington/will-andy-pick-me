@@ -55,7 +55,7 @@ function displayAnswer() {
   var question = userInput.value;
   userInput.value = '';
   eightBallImg.classList.add('hidden');
-  returnQuestion.innerText = `${question}?`;
+  returnQuestion.innerText = `"${question}?"`;
   returnAnswer.innerText = answers[getRandomIndex(answers)];
   enableDisableQuestionBtn();
   enabledDisableClearBtn();
