@@ -119,3 +119,7 @@ main {
   height: auto;
   margin-left: 50px;
 }
+
+.hidden {
+  display: none!important;
+}
