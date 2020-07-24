@@ -10,3 +10,16 @@ light blue background: #E6ECF4;
 clear button: #DE4841;
 clear button disabled: #D0CDCD
 */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --title-text: #2B4E80;
+  --btn-disabled: #607AA0;
+  --btn-hover: #1C3455;
+  --blue-background: #E6ECF4;
+  --btn-clear: #DE4841;
+  --btn-clear-disabled: #D0CDCD;
+}
